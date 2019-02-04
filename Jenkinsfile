@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Build and Test') {
             steps {
-                withEnv(["PATH=${tool 'apache-maven-3.6.0'}/bin:${tool 'java-1.8.0-openjdk-amd64'}/bin:${env.PATH}"])
-                sh 'mvn clean install'
+               //withEnv(["PATH=${tool 'apache-maven-3.6.0'}/bin:${tool 'java-1.8.0-openjdk-amd64'}/bin:${env.PATH}"])
+                sh 'mvn clean compile'
             }
         }
         stage('Deploy') {
