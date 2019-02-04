@@ -2,9 +2,6 @@
 
 pipeline {
   agent any
-  tools {
-    maven 'M2_HOME'
-  }
 	stage('Checkout'){
  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '722d2e88-8a8a-45a2-9ac4-ca07b2deb1ac', url: 'https://github.com/VenkeyK/Maven-Web-Project.git']]])
        }
