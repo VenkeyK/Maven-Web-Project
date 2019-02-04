@@ -17,7 +17,7 @@ agent any
         }
         stage('Deploy') {
             steps {
-                sh 'cp $workspace/target/*.war ubuntu@54.227.233.10:/opt/tomcat/apache-tomcat-8.5.37/webapps/'
+                sh 'cp $workspace/target/*.war ubuntu@18.212.8.72:/opt/tomcat/apache-tomcat-8.5.37/webapps/'
             }
         }
     }
