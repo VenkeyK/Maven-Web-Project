@@ -18,7 +18,7 @@ agent any
         stage('Deploy') {
             steps {
               // sh 'scp /var/lib/jenkins/workspace/pipe/target/*.war ubuntu@18.212.8.72:/opt/tomcat/apache-tomcat-8.5.37/webapps/'
-               sh 'cp - \\var\\lib\\jenkins\\workspace\\pipe\\target\\maven-web-project-1.0-SNAPSHOT.war \\opt\\tomcat\\apache-tomcat-8.5.37\\webapps\\'
+               sh '''cp - \\var\\lib\\jenkins\\workspace\\pipe\\target\\maven-web-project-1.0-SNAPSHOT.war opt\\tomcat\\apache-tomcat-8.5.37\\webapps\\'''
             }
         }
     }
