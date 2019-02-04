@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build and Test') {
             steps {
-                sh 'maven clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Deploy') {
