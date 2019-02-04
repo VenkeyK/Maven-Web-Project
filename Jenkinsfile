@@ -1,22 +1,7 @@
 #!groovy
 
 pipeline {
-agent any&lt;/code&gt;
- 
-tools{
-maven 'apache-maven-3.6.0'
-jdk 'java-1.8.0-openjdk-amd64'
-}
- 
-stages {
-stage ("initialize") {
-steps {
-sh '''
-echo "PATH = ${PATH}"
-echo "M2_HOME = ${M2_HOME}"
-'''
-}
-}
+agent any
 
     stages {
         stage('Checkout') {
@@ -27,7 +12,7 @@ echo "M2_HOME = ${M2_HOME}"
         stage('Build and Test') {
             steps {
                //withEnv(["PATH=${tool 'apache-maven-3.6.0'}/bin:${tool 'java-1.8.0-openjdk-amd64'}/bin:${env.PATH}"])
-                sh 'mvn clean compile'
+                sh 'mvn clean install'
             }
         }
         stage('Deploy') {
