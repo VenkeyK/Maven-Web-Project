@@ -20,7 +20,7 @@ node {
      // junit '**/target/surefire-reports/TEST-*.xml'
      stage('artifact') {
 
- archive 'target/*.jar'
+ archive 'target/*.war'
    }
     stage('Deployment'){
  // bat '''copy C:\\Program Files (x86)\\Jenkins\\workspace\\Gpipeline\\target\\*.war D:\\DevOps\\apache-tomcat-9.0.12\\webapps\\''' 
