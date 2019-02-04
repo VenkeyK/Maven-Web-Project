@@ -1,10 +1,22 @@
 #!groovy
 
 pipeline {
-    agent any
-tools {
-    maven 'apache-maven-3.6.0'
-  }
+agent any&lt;/code&gt;
+ 
+tools{
+maven 'apache-maven-3.6.0'
+jdk 'java-1.8.0-openjdk-amd64'
+}
+ 
+stages {
+stage ("initialize") {
+steps {
+sh '''
+echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
+'''
+}
+}
 
     stages {
         stage('Checkout') {
